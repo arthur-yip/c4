@@ -1,0 +1,56 @@
+.status {
+    background-color: #2263cc;
+    border-width: 0 0 0 3px;
+    border-color: #0f2b59;
+    border-style: solid;
+
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.box {
+    margin: 15px;
+    border: 5px #0f2b59 solid;
+    border-radius: 15px;
+}
+
+.boxTitle {
+    text-align: left;
+    margin: 0 10px;
+    font-weight: bolder;
+    color: #0f2b59;
+}
+
+.boxedRed, .boxedYellow {
+    width: 50px;
+    height: 50px;
+    margin: 10px auto;
+    border-radius: 50%;
+}
+
+.boxedRed {
+    background-color: #cc2222;
+}
+
+.boxedYellow {
+    background-color: #ffec1e;
+}
+
+.newGameButton {
+    width: 117px;
+    height: 40px;
+    margin: 180px auto 0 auto;
+    border: 5px #0f2b59 solid;
+    border-radius: 15px;
+    background-color: #2263cc;
+    color: #0f2b59;
+    font-weight: bolder;
+}
+
+.newGameButton:hover {
+    background-color: #6ca3fc;
+}
+
+.newGameButton:focus {
+    outline: none;
+}

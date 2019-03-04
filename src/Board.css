@@ -1,0 +1,38 @@
+.board {
+    background-color: #2263cc;
+    grid-column: 1;
+    grid-row: 1;
+
+    display: grid;
+    grid-template-columns: repeat(7, 70px);
+}
+
+.col:hover {
+    background-color: #4c82f7;
+}
+
+.gameEnded .col:hover {
+    background-color: unset;
+}
+
+.blank, .red, .yellow {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    border-radius: 50%;
+    grid-column: 1;
+    grid-row: 1;
+    box-shadow: inset 3px 3px #0f2b59;
+}
+
+.blank {
+    background-color: white;
+}
+
+.red {
+    background-color: #cc2222;
+}
+
+.yellow {
+    background-color: #ffec1e;
+}
