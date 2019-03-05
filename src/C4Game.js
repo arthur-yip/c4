@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Status from './Status';
 import Board from './Board';
 import { BoardHeight, Red, Yellow, FourRed, FourYellow } from './constants';
-import { isInfixOf } from './utils';
+import { isInfixOf, shift } from './utils';
 import { throws } from 'assert';
 import './C4Game.css';
 
@@ -67,7 +67,18 @@ class C4Game extends Component {
         });
 
         // diagonal check
-        // + 0 * 6 then rotate
+        let downStrings = this.transposeStrings(boardStrings.map((s, index) => shift(s + '000000', index)));
+        let upStrings = this.transposeStrings(boardStrings.map((s, index) => shift(s + '000000', -index)));
+        downStrings.concat(upStrings).forEach((col) => {
+            if(isInfixOf(col, FourRed)) {
+                this.setState({ winner: Red });
+                return;
+            }
+            else if(isInfixOf(col, FourYellow)) {
+                this.setState({ winner: Yellow });
+                return;
+            }
+        });
     }
     getBoardStrings() {
         return this.state.board.map((col) => {

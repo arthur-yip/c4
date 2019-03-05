@@ -9,3 +9,7 @@ export function tails(xs) {
 export function isInfixOf(xs, s) {
     return tails(xs).some((x) => x.startsWith(s));
 }
+
+export function shift(str, pos) {
+    return str.slice(pos) + str.slice(0, pos);
+}
